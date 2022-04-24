@@ -1,0 +1,14 @@
+{
+  "name": "monitorjs",
+  "version": "1.0.0",
+  "description": "错误监控sdk，学习使用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
