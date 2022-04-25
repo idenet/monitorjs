@@ -1,0 +1,6 @@
+/node_modules
+/dist
+/docs
+**/dist
+**/node_modules
+**/build
