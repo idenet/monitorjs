@@ -1,0 +1,14 @@
+{
+  "name": "@monitorjs/utils",
+  "version": "1.0.0",
+  "description": "提供工具函数",
+  "main": "index.ts",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@monitorjs/shared": "workspace:^1.0.0",
+    "@monitorjs/types": "workspace:^1.0.0"
+  }
+}

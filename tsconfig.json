@@ -2,16 +2,34 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "esnext",
+    "baseUrl": ".",
+    "paths": { // 指定多包的模块路径，需要设置 baseurl
+      "@monitorjs/*": [
+        "packages/*/src"
+      ],
+    },
+    "types": [
+      "node",
+      "wechat-miniprogram"
+    ],
     "lib": [
       "esnext",
       "dom"
     ],
-    "moduleResolution": "node",
+    "allowUnreachableCode": false, // 报告执行不到的代码错误
+    "allowUnusedLabels": false, // 不报告未使用的标签错误
+    "alwaysStrict": false, // 以严格模式解析并为每个源文件生成 "use strict"语句
+    "strictNullChecks": false, // 当尝试在可能为null或undefined的变量上访问属性时，报告错误 (一开始没开，现在开启导致很多错误，下次统一修复)
+    "preserveConstEnums": false, // true 使用 const enum 产生内联成员，会导致没有引入的const enum也会生成代码
+    "isolatedModules": false, // 将模块视为独立的，不会被其他模块所引用
+    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "moduleResolution": "Node", // 引入package.json不会报红
+    "sourceMap": true,
     "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "pretty": true,
+    "noImplicitAny": false, // 是否默认禁用 any
+    "removeComments": true, // 是否移除注释
+    "forceConsistentCasingInFileNames": true, //禁止对同一个文件的不一致的引用。
   }
 }

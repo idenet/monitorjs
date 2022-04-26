@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@monitorjs/shared": "workspace:^1.0.0",
+    "@monitorjs/utils": "workspace:^1.0.0",
     "@types/wechat-miniprogram": "^3.4.1"
   }
 }
