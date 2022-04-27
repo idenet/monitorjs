@@ -27,6 +27,10 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "declaration": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "pretty": true,
     "noImplicitAny": false, // 是否默认禁用 any
     "removeComments": true, // 是否移除注释

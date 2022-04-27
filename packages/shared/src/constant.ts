@@ -1,10 +1,8 @@
 import type { BrowserBreadcrumbTypes, BrowserEventTypes } from './browser'
+import type { WxBreadcrumbTypes, WxEventTypes } from './wx'
 
 /**
- * 上报的错误类型
- *
- * @export
- * @enum {number}
+ * 上报错误类型
  */
 export const enum ErrorTypes {
   UNKNOWN = 'UNKNOWN',
@@ -13,22 +11,24 @@ export const enum ErrorTypes {
   LOG = 'LOG',
   HTTP = 'HTTP',
   VUE = 'VUE',
+  REACT = 'REACT',
   RESOURCE = 'RESOURCE',
   PROMISE = 'PROMISE',
   ROUTE = 'ROUTE',
 }
 
-export type BreadcrumbTypes = BrowserBreadcrumbTypes | BaseBreadcrumbTypes
+/**
+ * 用户行为栈事件类型
+ */
+export type BreadcrumbTypes = BrowserBreadcrumbTypes | WxBreadcrumbTypes | BaseBreadcrumbTypes
 
 export const enum BaseBreadcrumbTypes {
   VUE = 'Vue',
+  REACT = 'React',
 }
 
 /**
- *用户行为类型
- *
- * @export
- * @enum {number}
+ * 用户行为类型
  */
 export const enum BREADCRUMBCATEGORYS {
   HTTP = 'http',
@@ -38,7 +38,10 @@ export const enum BREADCRUMBCATEGORYS {
   LIFECYCLE = 'lifecycle',
 }
 
-export type EventTypes = BrowserEventTypes | BaseEventTypes
+/**
+ * 所有重写事件类型整合
+ */
+export type EventTypes = BrowserEventTypes | WxEventTypes | BaseEventTypes
 
 export const MitoLog = 'Mito.log'
 export const MitoLogEmptyMsg = 'empty.msg'
@@ -47,6 +50,7 @@ export const MitoLogEmptyTag = 'empty.tag'
 export const enum BaseEventTypes {
   VUE = 'vue',
 }
+
 export const enum HttpTypes {
   XHR = 'xhr',
   FETCH = 'fetch',

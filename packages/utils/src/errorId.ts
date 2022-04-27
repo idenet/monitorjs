@@ -36,9 +36,8 @@ export function createErrorId(data: ReportDataType, apikey: string, maxDuplicate
   if (allErrorNumber[id] >= maxDuplicateCount)
     return null
 
-  if (typeof allErrorNumber[id] === 'number') {
+  if (typeof allErrorNumber[id] === 'number')
     allErrorNumber[id]++
-  }
   else
     allErrorNumber[id] = 1
 

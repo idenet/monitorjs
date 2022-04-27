@@ -1,11 +1,21 @@
 import type { ErrorTypes } from '@monitorjs/shared'
+import type { BreadcrumbPushData } from './breadcrumb'
 import type { HttpTransformedType } from './http'
+import type { DeviceInfo } from './wx'
 
 export interface AuthInfo {
   apikey?: string
   sdkVersion?: string
   sdkname?: string
   trackerId?: string
+}
+
+export interface TransportDataType {
+  authInfo?: AuthInfo
+  breadcrumb?: BreadcrumbPushData[]
+  data?: ReportDataType
+  record?: any[]
+  deviceInfo?: DeviceInfo
 }
 
 export interface BaseTransformType {

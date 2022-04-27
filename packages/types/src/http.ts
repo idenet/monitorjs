@@ -2,7 +2,7 @@ import type { HttpTypes } from '@monitorjs/shared'
 import type { BaseTransformType } from './transport'
 
 export interface HttpCollectedType {
-  reqeust: {
+  request: {
     httpType?: HttpTypes
     traceId?: string
     method?: string
