@@ -16,12 +16,36 @@ importers:
       prettier: 2.6.2
       typescript: 4.6.3
 
+  packages/browser:
+    specifiers:
+      '@monitorjs/core': workspace:^1.0.0
+      '@monitorjs/shared': workspace:^1.0.0
+      '@monitorjs/types': workspace:^1.0.0
+      '@monitorjs/utils': workspace:^1.0.0
+    dependencies:
+      '@monitorjs/core': link:../core
+      '@monitorjs/shared': link:../shared
+      '@monitorjs/types': link:../types
+      '@monitorjs/utils': link:../utils
+
+  packages/core:
+    specifiers:
+      '@monitorjs/shared': workspace:^1.0.0
+      '@monitorjs/types': workspace:^1.0.0
+      '@monitorjs/utils': workspace:^1.0.0
+    dependencies:
+      '@monitorjs/shared': link:../shared
+      '@monitorjs/types': link:../types
+      '@monitorjs/utils': link:../utils
+
   packages/types:
     specifiers:
+      '@monitorjs/core': workspace:^1.0.0
       '@monitorjs/shared': workspace:^1.0.0
       '@monitorjs/utils': workspace:^1.0.0
       '@types/wechat-miniprogram': ^3.4.1
     dependencies:
+      '@monitorjs/core': link:../core
       '@monitorjs/shared': link:../shared
       '@monitorjs/utils': link:../utils
       '@types/wechat-miniprogram': 3.4.1

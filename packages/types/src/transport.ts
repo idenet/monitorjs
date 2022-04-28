@@ -6,7 +6,7 @@ import type { DeviceInfo } from './wx'
 export interface AuthInfo {
   apikey?: string
   sdkVersion?: string
-  sdkname?: string
+  sdkName?: string
   trackerId?: string
 }
 

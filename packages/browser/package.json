@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@monitorjs/core": "workspace:^1.0.0",
+    "@monitorjs/shared": "workspace:^1.0.0",
+    "@monitorjs/types": "workspace:^1.0.0",
+    "@monitorjs/utils": "workspace:^1.0.0"
+  }
 }

@@ -1,6 +1,8 @@
+import type { Breadcrumb } from '@monitorjs/core'
+import type { BreadcrumbPushData } from './breadcrumb'
 import type { TransportDataType } from './transport'
 import type { VueInstance } from './vue'
-import type { BreadcrumbPushData } from './breadcrumb'
+// import type { BreadcrumbPushData } from './breadcrumb'
 
 type CANCEL = null | undefined | boolean
 
@@ -25,7 +27,7 @@ export interface BaseOptionsType<O extends BaseOptionsFieldsIntegrationType> ext
 
 export interface BaseOptionsFieldsType {
   // 上报到服务端的url
-  dns?: string
+  dsn?: string
   // 默认是false，为true时，sdk将不会初始化
   disable?: boolean
   // 默认是''，表示每个项目都应该有一个唯一值
@@ -76,7 +78,7 @@ export interface BaseOptionsHooksType {
    * @return {*}  {(BreadcrumbPushData|CANCEL)}
    * @memberof BaseOptionsHooksType
    */
-  beforePushBreadcrumb?(breadcrumb: BreadCrumb, hint: BreadcrumbPushData[]): BreadcrumbPushData|CANCEL
+  beforePushBreadcrumb?(breadcrumb: Breadcrumb, hint: BreadcrumbPushData): BreadcrumbPushData| CANCEL
   /**
    *拦截用户页面的 ajax 请求，并在ajax 请求发送前执行该 hook，可以对用户发送的 ajax 请求做 xhr.setRequestHeader
    *
@@ -84,7 +86,7 @@ export interface BaseOptionsHooksType {
    * @param {IBeforeAppAjaxSendConfig} setRequestHeader
    * @memberof BaseOptionsHooksType
    */
-  beforeAjaxSend?(config: IRequestHeaderConfig, setRequestHeader: IBeforeAppAjaxSendConfig): void
+  beforeAppAjaxSend?(config: IRequestHeaderConfig, setRequestHeader: IBeforeAppAjaxSendConfig): void
   /**
    *钩子函数:在beforeDataReport后面调用，在整合上报数据和本身SDK信息数据前调用，当前函数执行完后立即将数据错误信息上报至服务端
    *trackerId表示用户唯一键（可以理解成userId），需要trackerId的意义可以区分每个错误影响的用户数量

@@ -5,11 +5,11 @@ export interface BaseClientType<O extends BaseOptionsFieldsIntegrationType = Bas
    *  sdk 名称
    */
   SDK_NAME?: string
-  sdk_version: string
+  SDK_VERSION: string
   /**
    * 配置项和钩子函数
    */
-  option: O
+  options: O
   /**
    * 返回配置项和钩子函数
    */
